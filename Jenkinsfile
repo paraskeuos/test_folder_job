@@ -7,8 +7,8 @@ pipeline {
   
   stages {
     stage('Test') {
-      script {
-        steps {
+      steps {
+        script {
           def t = get_time
           echo t
         }
