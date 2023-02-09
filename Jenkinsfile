@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           def t = get_time()
-          echo "$t"
+          println t
         }
       }
     }
