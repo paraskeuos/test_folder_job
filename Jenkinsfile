@@ -1,5 +1,3 @@
-@Library('folder-library') _
-
 pipeline {
   agent {
     label 'linux'
@@ -8,6 +6,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
+          library identifier: 'test-library', retriever: modernSCM([$class: 'GitSCMSource', credentialsId: 'GITHUB_KEY', remote: 'git@github.com:paraskeuos/devops-internship-task1.git', traits: [gitBranchDiscovery()]])
         script {
           def t = get_time()
           println t
