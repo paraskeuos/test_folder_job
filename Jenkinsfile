@@ -9,10 +9,16 @@ pipeline {
     stage('Test') {
       steps {
         script {
-          def t = get_time
+          def t = get_time()
           echo t
         }
       }
+    }
+  }
+  
+  post {
+    always {
+      cleanWs()
     }
   }
 }
